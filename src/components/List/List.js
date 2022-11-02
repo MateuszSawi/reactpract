@@ -1,17 +1,31 @@
 import styles from './List.module.scss';
 import Column from '../Column/Column';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 const List = () => {
 
-  const columns = [
+  const [columns, setColumns] = useState([
     { id: 1, title: 'Books', icon: 'book' },
     { id: 2, title: 'Movies', icon: 'film' },
     { id: 3, title: 'Games', icon: 'gamepad' }
-  ];
+  ]);
 
-  setTimeout(() => {
-    columns.push({ id: 4, title: 'Test column'});
-  }, 2000);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setColumns([...columns, { id: 4, title: 'Test column'}]);
+  //   }, 2000);
+  // }, []);
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    setColumns([...columns, { id: ??, title: ?? }]);
+  };
+    
+  <form onSubmit={handleSubmit}>
+    <input type="text" />
+    <button>Add column</button>
+  </form>
 
   return (
   <div className={styles.list}>
